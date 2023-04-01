@@ -15,14 +15,23 @@ df['doors'] = df['doors'].map(doors_persons)
 df['persons'] = df['persons'].map(doors_persons)
 df['lug_boot'] = df['lug_boot'].map(lug)
 df['safety'] = df['safety'].map(buying_maint_safety)
-doors_colm = df['doors']
 buying_colm = df['buying']
+main = df['maint']
+doors_colm = df['doors']
+people = df['persons']
+Lugs = df['lug_boot']
+safe = df['safety']
+
 #there is a problem in calculating the mean since the more is not considered a number
-door_mean = float(doors_colm.mean())
-
 buying_mean= buying_colm.mean()
+maint = main.mean()
+door_mean = doors_colm.mean()
+people = people.mean()
+Lugs = Lugs.mean()
+safe = safe.mean()
 
-print(f'MEAN(Door:{door_mean} Mean:{buying_mean})')
+#all the means below
+print(f'MEAN(Buying:{buying_mean} Maintence:{maint} Door:{door_mean} Persons:{people} Luggage:{Lugs} Safety:{safe})')
 
 
 for sheet_name in df:
