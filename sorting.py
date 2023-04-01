@@ -16,31 +16,8 @@ df['persons'] = df['persons'].map(doors_persons)
 df['lug_boot'] = df['lug_boot'].map(lug)
 df['safety'] = df['safety'].map(buying_maint_safety)
 df['state'] = df['state'].map(state_change)
-df = df.drop(df[df['state'] != 1].index)
+
+df = df.drop(df[df['state'] != 4].index)
+#cutting the data for visualization
 print(len(df))
-
-
-
-
-for sheet_name in df:
-    data = df[sheet_name]
-    # Calculate the mean
-    mean = data.mean()
-    # Calculate the median
-    median = data.median()
-    # Calculate the variance
-    variance = data.var()# Calculate the standard deviation
-    std_dev = data.std()
-    # Print the results
-    print(f"{sheet_name}\n")
-    print('Mean:', mean)
-    print('Median:', median)
-    print('Variance:', variance)
-    print('Standard Deviation:', std_dev,)
-    print()
-for col in df.columns:
-    plt.boxplot(df[col])
-    plt.title(f'Box Chart of {col}')
-    plt.xlabel(col)
-    plt.ylabel('Value')
-    plt.show()
+df.to_csv('vgood.csv', index=False)
