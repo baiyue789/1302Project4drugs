@@ -18,6 +18,7 @@ df['lug_boot'] = df['lug_boot'].map(lug)
 df['safety'] = df['safety'].map(buying_maint_safety)
 df['state'] = df['state'].map(state_change)
 
+
 for sheet_name in df:
     data = df[sheet_name]
     # Calculate the mean
@@ -28,11 +29,12 @@ for sheet_name in df:
     variance = data.var()# Calculate the standard deviation
     std_dev = data.std()
     # Print the results
-    print(f"{sheet_name}")
+    print(f"{sheet_name}\n")
     print('Mean:', mean)
     print('Median:', median)
     print('Variance:', variance)
-    print('Standard Deviation:', std_dev)
+    print('Standard Deviation:', std_dev,)
+    print()
 for col in df.columns:
     plt.boxplot(df[col])
     plt.title(f'Box Chart of {col}')
