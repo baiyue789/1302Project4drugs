@@ -7,6 +7,7 @@ df = pd.read_csv("car.csv", index_col=False)
 doors_persons = {"2": 2, "3": 3, "4": 4, "5more" : 5, "more": 6}
 buying_maint_safety = {"vhigh": 4, "high":3, "med":2, "low":1}
 lug = {"small":1, "med":2, "big":3}
+state_change = {"unacc":1, "acc":2, "good":3, "vgood":4}
 #apparently the numbers in the list is saved as str not ints
 
 df['buying'] = df['buying'].map(buying_maint_safety)
@@ -15,30 +16,20 @@ df['doors'] = df['doors'].map(doors_persons)
 df['persons'] = df['persons'].map(doors_persons)
 df['lug_boot'] = df['lug_boot'].map(lug)
 df['safety'] = df['safety'].map(buying_maint_safety)
-buying_colm = df['buying']
-main = df['maint']
-doors_colm = df['doors']
-people = df['persons']
-Lugs = df['lug_boot']
-safe = df['safety']
-
-#there is a problem in calculating the mean since the more is not considered a number
-buying_mean= buying_colm.mean()
-maint = main.mean()
-door_mean = doors_colm.mean()
-people = people.mean()
-Lugs = Lugs.mean()
-safe = safe.mean()
-
-#all the means below
-print(f'MEAN(Buying:{buying_mean} Maintence:{maint} Door:{door_mean} Persons:{people} Luggage:{Lugs} Safety:{safe})')
-
+df['state'] = df['state'].map(state_change)
 
 for sheet_name in df:
     data = df[sheet_name]
-    fig, ax = plt.subplots()
-    ax.boxplot(data)
-    ax.set_xlabel('Data')
-    ax.set_ylabel('Value')
-    ax.set_title(f'Box Chart - {sheet_name}')
-    plt.show()
+    # Calculate the mean
+    mean = data.mean()
+    # Calculate the median
+    median = data.median()
+    # Calculate the variance
+    variance = data.var()# Calculate the standard deviation
+    std_dev = data.std()
+    # Print the results
+    print(f"{sheet_name}")
+    print('Mean:', mean)
+    print('Median:', median)
+    print('Variance:', variance)
+    print('Standard Deviation:', std_dev)
