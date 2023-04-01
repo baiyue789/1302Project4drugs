@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-df = pd.read_csv("car.txt",delimiter=',')
+df = pd.read_csv("car.csv", index_col=False)
 # Identify missing data
 df.isna().sum()
 # Drop rows with missing data
@@ -12,8 +12,9 @@ df.info()
 df.duplicated().sum()
 df = df.drop_duplicates()
 len(df)
+print(df.head())
 #Checking new length of data types
-doors_replace = {"2": 2, "3": 3, "4": 4, "more" : 5}
+doors_replace = {"2": 2, "3": 3, "4": 4, "5more" : 5}
 #apparently the numbers in the list is saved as str not ints
 df['doors'] = df['doors'].map(doors_replace)
 doors_colm = df['doors']
