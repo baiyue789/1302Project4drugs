@@ -33,3 +33,9 @@ for sheet_name in df:
     print('Median:', median)
     print('Variance:', variance)
     print('Standard Deviation:', std_dev)
+for col in df.columns:
+    plt.boxplot(df[col])
+    plt.title(f'Box Chart of {col}')
+    plt.xlabel(col)
+    plt.ylabel('Value')
+    plt.show()
