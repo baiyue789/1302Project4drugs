@@ -12,11 +12,10 @@ df.info()
 df.duplicated().sum()
 df = df.drop_duplicates()
 len(df)
-print(df.head())
 #Checking new length of data types
-doors_replace = {"2": 2, "3": 3, "4": 4, "5more" : 5}
+gen_replace = {"2": 2, "3": 3, "4": 4, "5more" : 5, "more": 6}
 #apparently the numbers in the list is saved as str not ints
-df['doors'] = df['doors'].map(doors_replace)
+df['doors'] = df['doors'].map(gen_replace)
 doors_colm = df['doors']
 #there is a problem in calculating the mean since the more is not considered a number
 door_mean = float(doors_colm.mean())
