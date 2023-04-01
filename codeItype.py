@@ -23,4 +23,4 @@ doors_colm = df['doors']
 door_mean = float(doors_colm.mean())
 door_median = float(doors_colm.median())
 print(f'Mean:{door_mean} Median:{door_median}')
-
+print("lickly")
