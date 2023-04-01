@@ -1,17 +1,9 @@
 import pandas as pd
 import numpy as np
 df = pd.read_csv("car.csv", index_col=False)
-# Identify missing data
-df.isna().sum()
-# Drop rows with missing data
-df = df.dropna()
-# Fill in missing data with the mean value
-df = df.fillna(df.mean())
-df.isna().sum()
-df.info()
-df.duplicated().sum()
-df = df.drop_duplicates()
-len(df)
+df = df.drop(df[df['if'] == 'unacc'].index)
+print(len(df))
+df.to_csv('Cars_remove_unacc.csv', index=False)
 #Checking new length of data types
 doors_persons = {"2": 2, "3": 3, "4": 4, "5more" : 5, "more": 6}
 buying_maint_safety = {"vhigh": 4, "high":3, "med":2, "low":1}
