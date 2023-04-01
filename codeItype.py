@@ -19,9 +19,6 @@ df['state'] = df['state'].map(state_change)
 df = df.drop(df[df['state'] != 1].index)
 print(len(df))
 
-
-
-
 for sheet_name in df:
     data = df[sheet_name]
     # Calculate the mean
