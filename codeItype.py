@@ -19,11 +19,11 @@ doors_colm = df['doors']
 buying_colm = df['buying']
 #there is a problem in calculating the mean since the more is not considered a number
 door_mean = float(doors_colm.mean())
-door_median = float(doors_colm.median())
+
 buying_mean= buying_colm.mean()
-buying_median = buying_colm.median()
-print(f'Mean number of doors:{door_mean} Median number of doors:{door_median}')
-print(f'Mean:{buying_mean} Median:{buying_median}')
+
+print(f'MEAN(Door:{door_mean} Mean:{buying_mean})')
+
 
 for sheet_name in df:
     data = df[sheet_name]
