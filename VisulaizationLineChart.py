@@ -11,33 +11,30 @@ def Q1MeanQ3(df, sheet_name):
     mean = data.mean()
     median = data.median()
     std_dev = data.std()
-    x = [mean - std_dev,mean,std_dev+mean]
+    x = [mean - std_dev,mean,mean,std_dev+mean]
     return x
 
 
-x = [1.0,2.0,3.0]
+x = [1.0,2.0,3.0,4.0]
 y1 = Q1MeanQ3(Unacc, "buying")
 y2 = Q1MeanQ3(acc, "buying")
 y3 = Q1MeanQ3(good, "buying")
 y4 = Q1MeanQ3(vgood, "buying")
 
 # Create a figure and axis
-fig, axs = plt.subplots(2,2)
+fig, axs = plt.subplots()
 
 # Add data to the axis as lines
-axs[0, 0].plot(x, y1)
-axs[0, 1].plot(x, y2)
-axs[1, 0].plot(x, y3)
-axs[1, 1].plot(x, y4)
+axs.plot(x, y1, label='Line 1')
+axs.plot(x, y2, label='Line 2')
+axs.plot(x, y3, label='Line 3')
+axs.plot(x,y4,label='Line 4')
+
 
 # Add title and labels to the chart
-fig.suptitle('Four Plot Line Chart')
-axs[0, 0].set_ylabel('Unacc')
-axs[0, 1].set_ylabel('Acc')
-axs[1, 0].set_ylabel('Good')
-axs[1, 1].set_ylabel('Vgood')
-for ax in axs.flat:
-    ax.set_xlabel('X-axis')
+axs.set_title('Three Line Chart')
+axs.set_xlabel('X-axis')
+axs.set_ylabel('Y-axis')
 
 # Show the chart
 plt.show()
