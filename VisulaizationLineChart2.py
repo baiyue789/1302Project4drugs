@@ -16,25 +16,25 @@ def Q1MeanQ3(df, sheet_name):
 
 
 x = ["Q1","Mean","Mean","Q3"]
-y1 = Q1MeanQ3(Unacc, "high")
-y2 = Q1MeanQ3(acc, "low")
-y3 = Q1MeanQ3(good, "med")
-y4 = Q1MeanQ3(vgood, "vhigh")
+y1 = Q1MeanQ3(Unacc, "maint")
+y2 = Q1MeanQ3(acc, "maint")
+y3 = Q1MeanQ3(good, "maint")
+y4 = Q1MeanQ3(vgood, "maint")
 
 # Create a figure and axis
 fig, axs = plt.subplots()
 
 # Add data to the axis as lines
-axs.plot(x, y1, label='Unacc')
-axs.plot(x, y2, label='acc')
-axs.plot(x, y3, label='goog')
-axs.plot(x, y4, label='vgood')
+axs.plot(x, y1, label='high')
+axs.plot(x, y2, label='low')
+axs.plot(x, y3, label='med')
+axs.plot(x, y4, label='vhigh')
 
 
 # Add title and labels to the chart
-axs.set_title('Buying prices')
+axs.set_title('Buying to maintience prices')
 axs.set_xlabel('Values')
-axs.set_ylabel('Price')
+axs.set_ylabel('Price(Maintence)')
 
 axs.legend()
 
