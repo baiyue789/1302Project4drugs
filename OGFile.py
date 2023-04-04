@@ -11,25 +11,28 @@ def Q1MeanQ3(df, sheet_name):
     mean = data.mean()
     median = data.median()
     std_dev = data.std()
-    x = [mean - std_dev,mean,std_dev+mean] #["Q1","Mean","Mean","Q3"]
+    x = [mean - std_dev,mean,mean,std_dev+mean] #["Q1","Mean","Mean","Q3"]
     return x
 
 
-x = ["Q1","Mean","Q3"] 
-y1 = Q1MeanQ3(Unacc, "buying") #["Q1","Mean","Q3"] format of what is returned
-y2 = Q1MeanQ3(acc, "buying")
-y3 = Q1MeanQ3(good, "buying")
-y4 = Q1MeanQ3(vgood, "buying")
+x = ['unacc', 'acc', 'good', 'vgood'] 
+x1 = Q1MeanQ3(Unacc, "buying") #["Q1","Mean","Q3"] format of what is returned
+x2 = Q1MeanQ3(acc, "buying")
+x3 = Q1MeanQ3(good, "buying")
+x4 = Q1MeanQ3(vgood, "buying")
+y1 = [x1[0],x2[0],x3[0],x4[0]]
+y2 = [x1[1],x2[1],x3[1],x4[1]]
+y3 = [x1[2],x2[2],x3[2],x4[2]]
+y4 = [x1[3],x2[3],x3[3],x4[3]]
 
 
 # Create a figure and axis
 fig, axs = plt.subplots()
 
 # Add data to the axis as lines
-axs.plot(x, y1, label='Unacc')
-axs.plot(x, y2, label='acc')
-axs.plot(x, y3, label='goog')
-axs.plot(x, y4, label='vgood')
+axs.plot(x, y1, label='Q1')
+axs.plot(x, y2, label='Mean')
+axs.plot(x, y4, label='Q3')
 
 
 # Add title and labels to the chart
