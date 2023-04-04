@@ -32,9 +32,9 @@ axs.plot(x, y4, label='vhigh')
 
 
 # Add title and labels to the chart
-axs.set_title('Buying to maintience prices')
+axs.set_title('Buying prices')
 axs.set_xlabel('Values')
-axs.set_ylabel('Price(Maintence)')
+axs.set_ylabel('Price')
 
 axs.legend()
 
