@@ -17,7 +17,7 @@ df['lug_boot'] = df['lug_boot'].map(lug)
 df['safety'] = df['safety'].map(buying_maint_safety)
 df['state'] = df['state'].map(state_change)
 
-df = df.drop(df[df['state'] != 4].index)
+#df = df.drop(df[df['state'] != 4].index)
 #cutting the data for visualization
 print(len(df))
-df.to_csv('vgood.csv', index=False)
+df.to_csv('Car_converted.csv', index=False)
