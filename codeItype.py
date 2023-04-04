@@ -16,7 +16,9 @@ df['persons'] = df['persons'].map(doors_persons)
 df['lug_boot'] = df['lug_boot'].map(lug)
 df['safety'] = df['safety'].map(buying_maint_safety)
 df['state'] = df['state'].map(state_change)
-df = df.drop(df[df['state'] != 1].index)
+#createing split of new databases
+df = df.drop(df[df['buying'] != 1].index)
+df.to_csv("vhigh.csv",index=False)
 print(len(df))
 
 for sheet_name in df:
