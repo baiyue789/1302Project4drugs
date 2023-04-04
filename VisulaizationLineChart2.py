@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-Unacc = pd.read_csv("Unacc.csv", index_col=False)
-acc = pd.read_csv("acc.csv", index_col=False)
-good = pd.read_csv("good.csv", index_col=False)
-vgood = pd.read_csv("vgood.csv", index_col=False)
+Unacc = pd.read_csv("Buying/highBuying.csv", index_col=False)
+acc = pd.read_csv("Buying/lowBuying.csv", index_col=False)
+good = pd.read_csv("Buying/medBuying.csv", index_col=False)
+vgood = pd.read_csv("Buying/vhighBuying.csv", index_col=False)
 def Q1MeanQ3(df, sheet_name):
     sheet_name = str(sheet_name)
     data = df[sheet_name]
@@ -16,10 +16,10 @@ def Q1MeanQ3(df, sheet_name):
 
 
 x = ["Q1","Mean","Mean","Q3"]
-y1 = Q1MeanQ3(Unacc, "buying")
-y2 = Q1MeanQ3(acc, "buying")
-y3 = Q1MeanQ3(good, "buying")
-y4 = Q1MeanQ3(vgood, "buying")
+y1 = Q1MeanQ3(Unacc, "high")
+y2 = Q1MeanQ3(acc, "low")
+y3 = Q1MeanQ3(good, "med")
+y4 = Q1MeanQ3(vgood, "vhigh")
 
 # Create a figure and axis
 fig, axs = plt.subplots()
