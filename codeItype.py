@@ -11,6 +11,7 @@ state_change = {"unacc":1, "acc":2, "good":3, "vgood":4}
 
 df['buying'] = df['buying'].map(buying_maint_safety)
 df['maint'] = df['maint'].map(buying_maint_safety)
+#check README so that these cars will 
 df['doors'] = df['doors'].map(doors_persons)
 df['persons'] = df['persons'].map(doors_persons)
 df['lug_boot'] = df['lug_boot'].map(lug)
