@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-Unacc = pd.read_csv("highBuying.csv", index_col=False)
-acc = pd.read_csv("lowBuying.csv", index_col=False)
-good = pd.read_csv("medBuying.csv", index_col=False)
-vgood = pd.read_csv("vhighBuying.csv", index_col=False)
+Unacc = pd.read_csv("Buying/highBuying.csv", index_col=False)
+acc = pd.read_csv("Buying/lowBuying.csv", index_col=False)
+good = pd.read_csv("Buying/medBuying.csv", index_col=False)
+vgood = pd.read_csv("Buying/vhighBuying.csv", index_col=False)
 def Q1MeanQ3(df, sheet_name):
     sheet_name = str(sheet_name)
     data = df[sheet_name]
