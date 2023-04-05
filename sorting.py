@@ -19,6 +19,8 @@ df['state'] = df['state'].map(state_change)
 
 #df = df.drop(df[df['state'] != 4].index)
 #cutting the data for visualization
-df = df.drop(df[df['buying'] != 2].index)
-df.to_csv("lowBuying.csv",index=False)
+for i in range(1,5):
+    df = df.drop(df[df["safety"] != i].index)
+    low = str(i)
+    df.to_csv(low,index=False)
 len(df)
