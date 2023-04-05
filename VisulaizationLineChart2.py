@@ -1,9 +1,25 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-Unacc = pd.read_csv("Conditions/Unacc.csv", index_col=False)
-acc = pd.read_csv("Conditions/acc.csv", index_col=False)
-good = pd.read_csv("Conditions/good.csv", index_col=False)
-vgood = pd.read_csv("Conditions/vgood.csv", index_col=False)
+def whichcsvfileread(df):
+    df = str(df)
+    if df == "Conditions":
+        x = ["Conditions/Unacc.csv","Conditions/acc.csv","Conditions/good.csv","Conditions/vgood.csv"]
+        return x
+    if df == "Buying":
+        x = ["Buying/vhigh.csv","Buying/high.csv","Buying/med.csv","Buying/low.csv"]
+        return x
+    if df == "maint":
+        x = ["Maint/vhigh.csv","Maint/high.csv","Maint/med.csv","Maint/low.csv"]
+        return x
+
+
+whatever = whichcsvfileread("Buying")
+Unacc = pd.read_csv(whatever[0], index_col=False)
+acc = pd.read_csv(whatever[1], index_col=False)
+good = pd.read_csv(whatever[2], index_col=False)
+vgood = pd.read_csv(whatever[3], index_col=False)
+
+
 def Q1MeanQ3(df, sheet_name):
     sheet_name = str(sheet_name)
     data = df[sheet_name]
@@ -14,7 +30,7 @@ def Q1MeanQ3(df, sheet_name):
     x = [mean - std_dev,mean,mean,std_dev+mean] #["Q1","Mean","Mean","Q3"]
     return x
 
-x = ['unacc', 'acc', 'good', 'vgood'] 
+x = ['unacc', 'acc', 'good', 'vgood']
 x1 = Q1MeanQ3(Unacc, "buying") #["Q1","Mean","Q3"] format of what is returned
 x2 = Q1MeanQ3(acc, "buying")
 x3 = Q1MeanQ3(good, "buying")
