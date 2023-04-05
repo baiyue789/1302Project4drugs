@@ -2,7 +2,7 @@
 
 Class Values:
 
-unacc, acc, good, vgood
+Conditions: unacc, acc, good, vgood
 
 Attributes:
 
