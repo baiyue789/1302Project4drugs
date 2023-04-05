@@ -9,18 +9,15 @@ lug = {"small":1, "med":2, "big":3}
 state_change = {"unacc":1, "acc":2, "good":3, "vgood":4}
 #apparently the numbers in the list is saved as str not ints
 
-df['buying'] = df['buying'].map(buying_maint_safety)
-df['maint'] = df['maint'].map(buying_maint_safety)
-df['doors'] = df['doors'].map(doors_persons)
+df['buying'] = df['buying'].map(buying_maint_safety)#
+df['maint'] = df['maint'].map(buying_maint_safety)#
+df['doors'] = df['doors'].map(doors_persons)#
 df['persons'] = df['persons'].map(doors_persons)
-df['lug_boot'] = df['lug_boot'].map(lug)
-df['safety'] = df['safety'].map(buying_maint_safety)
-df['state'] = df['state'].map(state_change)
+df['lug_boot'] = df['lug_boot'].map(lug)#
+df['safety'] = df['safety'].map(buying_maint_safety)#
+df['state'] = df['state'].map(state_change)#
 
-#df = df.drop(df[df['state'] != 4].index)
 #cutting the data for visualization
-for i in range(1,5):
-    df = df.drop(df[df["safety"] != i].index)
-    low = str(i)
-    df.to_csv(low,index=False)
+df = df.drop(df[df["persons"] != 6].index)
+df.to_csv("6",index=False)
 len(df)
