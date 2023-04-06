@@ -15,7 +15,7 @@ def whichcsvfileread(df):
         return x
 
 
-whatever = whichcsvfileread("Maint") #planning to replace the "maint" with lol
+whatever = whichcsvfileread(lol) #planning to replace the "maint" with lol
 Unacc = pd.read_csv(whatever[0], index_col=False)
 acc = pd.read_csv(whatever[1], index_col=False)
 good = pd.read_csv(whatever[2], index_col=False)
@@ -40,7 +40,7 @@ def Q1MeanQ3(df, sheet_name):
     x = [mean - std_dev,mean,mean,std_dev+mean] #["Q1","Mean","Mean","Q3"]
     return x
 #going to use lol2 to replace the "buying" below
-x = the_X_based_on_database_compare("maint")
+x = the_X_based_on_database_compare(lol)
 x1 = Q1MeanQ3(Unacc, "buying") #["Q1","Mean","Q3"] format of what is returned
 x2 = Q1MeanQ3(acc, "buying")
 x3 = Q1MeanQ3(good, "buying")
