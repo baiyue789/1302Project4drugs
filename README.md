@@ -12,3 +12,5 @@ doors: 2, 3, 4, 5more.
 persons: 2, 4, more.'
 lug_boot: small, med, big.'
 safety: low, med, high.'
+
+All the sort based on attribute CSV files are in the folders
