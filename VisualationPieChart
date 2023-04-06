@@ -1,0 +1,9 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+df = pd.read_csv("Car_converted.csv", index_col=False)
+
+grouped = df.groupby('state')
+counts = grouped.size()
+y= ['unacc', 'acc', 'good', 'vgood']
+plt.pie(counts, labels=y)
+plt.show()
