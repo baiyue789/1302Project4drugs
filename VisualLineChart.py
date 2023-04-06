@@ -9,7 +9,6 @@ def Q1MeanQ3(df, sheet_name):
     data = df[sheet_name]
     # Calculate the mean
     mean = data.mean()
-    median = data.median()
     std_dev = data.std()
     x = [mean - std_dev,mean,mean,std_dev+mean] #["Q1","Mean","Mean","Q3"]
     return x
