@@ -24,9 +24,9 @@ def the_X_based_on_database_compare(db):
         x = ['low', 'med', 'high']
         return x
         
-lol = 'safety'
+lol = 'state'
 grouped = df.groupby(lol)
 counts = grouped.size()
-y= the_X_based_on_database_compare("S")
+y= the_X_based_on_database_compare("C")
 plt.pie(counts, labels=y)
 plt.show()
