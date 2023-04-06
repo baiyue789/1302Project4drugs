@@ -29,7 +29,6 @@ def Q1MeanQ3(df, sheet_name):
     data = df[sheet_name]
     # Calculate the mean
     mean = data.mean()
-    median = data.median()
     std_dev = data.std()
     x = [mean - std_dev,mean,mean,std_dev+mean] #["Q1","Mean","Mean","Q3"]
     return x
@@ -58,10 +57,10 @@ def the_X_based_on_database_compare(db):
         return x
 x = the_X_based_on_database_compare("Conditions")
 
-x1 = Q1MeanQ3(one, "lug_boot") #["Q1","Mean","Q3"] format of what is returned
-x2 = Q1MeanQ3(two, "lug_boot")
-x3 = Q1MeanQ3(three, "lug_boot")
-x4 = Q1MeanQ3(four, "lug_boot")
+x1 = Q1MeanQ3(one, "safety") #["Q1","Mean","Q3"] format of what is returned
+x2 = Q1MeanQ3(two, "safety")
+x3 = Q1MeanQ3(three, "safety")
+x4 = Q1MeanQ3(four, "safety")
 y1 = [x1[0],x2[0],x3[0],x4[0]]
 y2 = [x1[1],x2[1],x3[1],x4[1]]
 y3 = [x1[2],x2[2],x3[2],x4[2]]
@@ -76,7 +75,7 @@ axs.plot(x, y2, label='Mean')
 # Add title and labels to the chart
 axs.set_title('Buying prices')
 axs.set_xlabel('Condition')
-axs.set_ylabel('Lug_boot')
+axs.set_ylabel('safety')
 
 axs.legend()
 
