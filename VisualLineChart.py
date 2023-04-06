@@ -29,9 +29,7 @@ y4 = [x1[3],x2[3],x3[3],x4[3]]
 fig, axs = plt.subplots()
 
 # Add data to the axis as lines
-axs.plot(x, y1, label='Q1')
 axs.plot(x, y2, label='Mean')
-axs.plot(x, y4, label='Q3')
 
 
 # Add title and labels to the chart
