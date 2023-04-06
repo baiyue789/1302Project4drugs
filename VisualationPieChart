@@ -1,9 +1,32 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 df = pd.read_csv("Car_converted.csv", index_col=False)
-
-grouped = df.groupby('state')
+def the_X_based_on_database_compare(db):
+    if db == "C":
+        x = ['unacc', 'acc', 'good', 'vgood']
+        return x
+    if db == "B":
+        x = ["vhigh", "high","med", "low"]
+        return x
+    if db == "M":
+        x = ["high","med", "low"]
+        return x
+    if db == "P":
+        x = ['2','4', "more"]
+        return x
+    if db == 'D':
+        x = ['2', '3', '4', '5more']
+        return x
+    if db =='L':
+        x = ['small', 'med', 'big']
+        return x
+    if db =='S':
+        x = ['low', 'med', 'high']
+        return x
+        
+lol = 'safety'
+grouped = df.groupby(lol)
 counts = grouped.size()
-y= ['unacc', 'acc', 'good', 'vgood']
+y= the_X_based_on_database_compare("S")
 plt.pie(counts, labels=y)
 plt.show()
