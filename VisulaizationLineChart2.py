@@ -16,10 +16,10 @@ def whichcsvfileread(df):
 
 
 whatever = whichcsvfileread(lol) #planning to replace the "maint" with lol
-Unacc = pd.read_csv(whatever[0], index_col=False)
-acc = pd.read_csv(whatever[1], index_col=False)
-good = pd.read_csv(whatever[2], index_col=False)
-vgood = pd.read_csv(whatever[3], index_col=False)
+one = pd.read_csv(whatever[0], index_col=False)
+two = pd.read_csv(whatever[1], index_col=False)
+three = pd.read_csv(whatever[2], index_col=False)
+four = pd.read_csv(whatever[3], index_col=False)
 
 
 def the_X_based_on_database_compare(db):
@@ -41,10 +41,11 @@ def Q1MeanQ3(df, sheet_name):
     return x
 #going to use lol2 to replace the "buying" below
 x = the_X_based_on_database_compare(lol)
-x1 = Q1MeanQ3(Unacc, "buying") #["Q1","Mean","Q3"] format of what is returned
-x2 = Q1MeanQ3(acc, "buying")
-x3 = Q1MeanQ3(good, "buying")
-x4 = Q1MeanQ3(vgood, "buying")
+
+x1 = Q1MeanQ3(one, "buying") #["Q1","Mean","Q3"] format of what is returned
+x2 = Q1MeanQ3(two, "buying")
+x3 = Q1MeanQ3(three, "buying")
+x4 = Q1MeanQ3(four, "buying")
 y1 = [x1[0],x2[0],x3[0],x4[0]]
 y2 = [x1[1],x2[1],x3[1],x4[1]]
 y3 = [x1[2],x2[2],x3[2],x4[2]]
