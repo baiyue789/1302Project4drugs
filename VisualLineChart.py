@@ -37,8 +37,8 @@ axs.plot(x, y4, label='Q3')
 
 # Add title and labels to the chart
 axs.set_title('Buying prices')
-axs.set_xlabel('Values')
-axs.set_ylabel('Price')
+axs.set_xlabel('Condition')
+axs.set_ylabel('Buying')
 
 axs.legend()
 
