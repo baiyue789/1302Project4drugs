@@ -1,9 +1,0 @@
-import matplotlib.pyplot as plt
-import pandas as pd
-pf = pd.read_csv('Car_Converted.csv')
-y=0
-pf.plot(y= "buying")
-plt.ylabel("Buying Value")
-plt.xlabel("Number of Cars")
-plt.title("Buying Value vs Number of Cars")
-plt.show()

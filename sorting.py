@@ -18,6 +18,6 @@ df['safety'] = df['safety'].map(buying_maint_safety)#
 df['state'] = df['state'].map(state_change)#
 
 #cutting the data for visualization
-df = df.drop(df[df["persons"] != 6].index)
+"""df = df.drop(df[df["persons"] != 6].index)"""
 df.to_csv("6",index=False)
 len(df)
